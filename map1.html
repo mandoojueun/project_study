@@ -46,15 +46,15 @@
                     // $.ajax([옵션]) URL주소는 클라이언트가 HTTP 요청을 보낼 서버의 주소임.
                     // .ajax() 하면 요청을 보냄
                     // .done() ajax를 이용한 HTTP 요청이 성공하면 요청한 데이터가 done 메소드로 전달됨
-                    // grep: 배열의 모든 항목을 받아 콜백 함수에 의해 필터 함수를 만족하는 배열을 반환하는 함수
-                    // $.grep(Array, function(value, index){}, [,invert]);
-                    // Array는 검색할 배열 객체
-                    // function은 각 항목을 처리하는 기능.  
                     $.ajax({
                         method: "GET",
                         url: "https://api.odcloud.kr/api/3045247/v1/uddi:00389e44-9981-41c5-81b9-c31008cd0210?page=1&perPage=6365&serviceKey=s929rm6HHF2WlI4VbMVzo2MoYzcLQe2GMSS0ffq4h9z9bcB6YN4jfiNDxxBZ3mlY8JGnK6h7bz6YrpbI3ZnVCw%3D%3D",
                         headers: { Authorization: "s929rm6HHF2WlI4VbMVzo2MoYzcLQe2GMSS0ffq4h9z9bcB6YN4jfiNDxxBZ3mlY8JGnK6h7bz6YrpbI3ZnVCw==" }
                     }).done(function (msg) {
+                        // grep: 배열의 모든 항목을 받아 콜백 함수에 의해 필터 함수를 만족하는 배열을 반환하는 함수
+                        // $.grep(Array, function(value, index){}, [,invert]);
+                        // Array는 검색할 배열 객체
+                        // function은 각 항목을 처리하는 기능.  
                         filteredData = $.grep(msg.data, function (item) {
                             switch (category) {
                                 case "food":
